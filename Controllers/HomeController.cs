@@ -20,8 +20,8 @@ namespace OpenCell.Controllers
            public ActionResult Index()
         {
             var model = db.Opencells
-                .OrderByDescending(r => r.ID)
-                .Where(x => x.ID <= 10);
+                .OrderByDescending(r => r.ID);
+               // .Where(x => x.ID <= 100000);
             return View(model.ToList());
               
         }

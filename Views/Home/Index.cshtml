@@ -4,41 +4,40 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Big Data OpenCell</h2>
 
-<div id="theMap" style="width:520px">
-<script type="text/javascript">
-  
-function onMapLoaded() {
-        var latitude = 0;
-        var longitude = 0;
-        OpenCell.LoadMap();
-   
-    }
-</script>
- </div>
- 
-<table>
- 
-<script type="text/javascript">
-@foreach (var item in Model)
-{
-    var lo = item.lon;
-    var la = item.lat;
-     
-  <text >
-    OpenCell.LoadPin(lo, la);
-    Opencell.LoadPin(lo, la);
-    // <tr>
-    // <td>  @Html.DisplayFor(modelItem => item.cell) </td>
-    // <td>  @Html.DisplayFor(modelItem => item.lon)  </td>
-    // <td>  @Html.DisplayFor(modelItem => item.lat)  </td>
-    // </tr>
-       </text>
-    }
- 
-</script>
+        <div id='printoutPanel'></div>
+        
+        <div id='theMap' style='width: 75vw; height: 75vh;'></div>
+        <script type='text/javascript'>
+            function onMapLoaded() {
 
-//]]>
-       
-</table>
+               var map = new Microsoft.Maps.Map(document.getElementById('theMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    center: new Microsoft.Maps.Location(39.393486, -98.100769),
+                    zoom: 3 });
+                Microsoft.Maps.loadModule('Microsoft.Maps.Clustering', function () {
+                    // Creating sample Pushpin data within map view
+                    var pins = [];
+
+                     @foreach (var item in Model) {
+        <text>
+                    var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(@item.lat, @item.lon));
+                    pin.metedata = item;
+                    pins.push(pin);
+        </text>
+                     }
+                    //var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(1000, map.getBounds());
+                    var clusterLayer = new Microsoft.Maps.ClusterLayer(pins, { gridSize: 100 });
+                    map.layers.insert(clusterLayer);
+                });
+                
+            }
+           
+        </script>
+
+
+
+
+
+ 

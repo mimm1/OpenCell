@@ -45,10 +45,28 @@ function onMouseUp(e) {
     $("#lon").val(loc.longitude.toString());
 }
 
-OpenCell.LoadPin = function (latitude, longitude) {
-    if (latitude == 0 || longitude == 0) {
-        return;
+OpenCell.LoadPins = function (latitude, longitude) {
+
+    OpenCell._map = new Microsoft.Maps.Map(document.getElementById('theMap'), {});
+    // Create draggable Pin in the center
+    var center = OpenCell._map.getCenter();
+    var Location = Microsoft.Maps.Location;
+    var Pushpin = Microsoft.Maps.Pushpin;
+
+    if (latitude != null && longitude != null) {
+        this._map.setView({
+            center: new Microsoft.Maps.Location(latitude, longitude),
+            zoom: 15
+        });
+        OpenCell._pins = new Pushpin(new Location(latitude, longitude), { color: '#00f', draggable: false });
     }
+    else {
+        OpenCell._pins = new Pushpin(new Location(center.latitude, center.longitude), { color: '#00f', draggable: false });
+
+    }
+    OpenCell._map.entities.push(OpenCell._pins);
+    // Binding the events
+    //OpenCell.EnableCallback();
 }
 
 

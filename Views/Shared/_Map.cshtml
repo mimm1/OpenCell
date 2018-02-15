@@ -7,16 +7,14 @@
            
 <script type="text/javascript">
 
-
-
-    function onMapLoaded() {
+function onMapLoaded() {
  
         @if(@Model != null){
-            <text>
+           <text>
             var longitude = @Convert.ToString(Model.lon, CultureInfo.InvariantCulture);
             var latitude = @Convert.ToString(Model.lat, CultureInfo.InvariantCulture);
-            OpenCell.LoadMap(latitude, longitude, mapLoaded);
-        </text>
+            OpenCell.LoadMap(latitude, longitude);
+           </text>
         }  
 
           else {
@@ -28,17 +26,8 @@
             //Some code to do stuff with the sections.
         }  
      
-    }
+}
     
-     
-    function mapLoaded() {
-         @if (Model != null){
-        var title = "Name :" +"@Model.mcc";
-        var cell = "Cell :" + "@Model.cell";}
-        OpenCell.LoadPin(OpenCellid._map.getCenter(), title, cell, false);
-        OpenCellid._map.SetZoomLevel(10);
-         
-    } 
 //]]>
 </script>
 </div>
