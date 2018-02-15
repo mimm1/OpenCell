@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OpencellidModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="OpencellidModelStoreContainer">
+          <EntitySet Name="Opencell" EntityType="OpencellidModel.Store.Opencell" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Opencell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="radio" Type="varchar" MaxLength="50" />
+          <Property Name="mcc" Type="varchar" MaxLength="50" />
+          <Property Name="net" Type="varchar" MaxLength="50" />
+          <Property Name="area" Type="varchar" MaxLength="50" />
+          <Property Name="cell" Type="varchar" MaxLength="50" />
+          <Property Name="unit" Type="varchar" MaxLength="50" />
+          <Property Name="lon" Type="float" />
+          <Property Name="lat" Type="float" />
+          <Property Name="range" Type="varchar" MaxLength="50" />
+          <Property Name="samples" Type="varchar" MaxLength="50" />
+          <Property Name="changeable" Type="varchar" MaxLength="50" />
+          <Property Name="created" Type="varchar" MaxLength="50" />
+          <Property Name="updated" Type="varchar" MaxLength="50" />
+          <Property Name="averageSignal" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OpencellidModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OpencellidEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Opencells" EntityType="OpencellidModel.Opencell" />
+        </EntityContainer>
+        <EntityType Name="Opencell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="radio" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="mcc" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="net" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="area" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="cell" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="unit" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="lon" Type="Double" />
+          <Property Name="lat" Type="Double" />
+          <Property Name="range" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="samples" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="changeable" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="created" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="updated" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="averageSignal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OpencellidModelStoreContainer" CdmEntityContainer="OpencellidEntities">
+          <EntitySetMapping Name="Opencells">
+            <EntityTypeMapping TypeName="OpencellidModel.Opencell">
+              <MappingFragment StoreEntitySet="Opencell">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="radio" ColumnName="radio" />
+                <ScalarProperty Name="mcc" ColumnName="mcc" />
+                <ScalarProperty Name="net" ColumnName="net" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="cell" ColumnName="cell" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="lon" ColumnName="lon" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="range" ColumnName="range" />
+                <ScalarProperty Name="samples" ColumnName="samples" />
+                <ScalarProperty Name="changeable" ColumnName="changeable" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="averageSignal" ColumnName="averageSignal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

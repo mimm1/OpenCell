@@ -1,0 +1,19 @@
+﻿@model OpenCell.Models.Opencell
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Please correct the errors and try again.")
+     <fieldset>
+
+     <table>
+        <td><div id="OpenCellDiv">
+            @Html.EditorForModel()
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </div> </td>
+        <td> <div id="theMap" style="width:820px"> @Html.Partial("../Shared/_Map")</div> </td>
+     </table>
+      @Html.ActionLink("Back to List", "Index")       
+    </fieldset>
+   }

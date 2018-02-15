@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OpenCell.Models.Opencell>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div id="theMap" style="width:520px">
+<script type="text/javascript">
+  
+function onMapLoaded() {
+        var latitude = 0;
+        var longitude = 0;
+        OpenCell.LoadMap();
+   
+    }
+</script>
+ </div>
+ 
+<table>
+ 
+<script type="text/javascript">
+@foreach (var item in Model)
+{
+    var lo = item.lon;
+    var la = item.lat;
+     
+  <text >
+    OpenCell.LoadPin(lo, la);
+    Opencell.LoadPin(lo, la);
+    // <tr>
+    // <td>  @Html.DisplayFor(modelItem => item.cell) </td>
+    // <td>  @Html.DisplayFor(modelItem => item.lon)  </td>
+    // <td>  @Html.DisplayFor(modelItem => item.lat)  </td>
+    // </tr>
+       </text>
+    }
+ 
+</script>
+
+//]]>
+       
+</table>

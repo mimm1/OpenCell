@@ -1,0 +1,45 @@
+﻿@model OpenCell.Models.Opencell
+@using System.Collections.Generic;
+@using System.Globalization;
+@using System.ComponentModel;
+
+<div id="theMap" style="width:520px">
+           
+<script type="text/javascript">
+
+
+
+    function onMapLoaded() {
+ 
+        @if(@Model != null){
+            <text>
+            var longitude = @Convert.ToString(Model.lon, CultureInfo.InvariantCulture);
+            var latitude = @Convert.ToString(Model.lat, CultureInfo.InvariantCulture);
+            OpenCell.LoadMap(latitude, longitude, mapLoaded);
+        </text>
+        }  
+
+          else {
+            <text>
+            var latitude = 0;
+            var longitude = 0;
+            OpenCell.LoadMap();
+            </text>
+            //Some code to do stuff with the sections.
+        }  
+     
+    }
+    
+     
+    function mapLoaded() {
+         @if (Model != null){
+        var title = "Name :" +"@Model.mcc";
+        var cell = "Cell :" + "@Model.cell";}
+        OpenCell.LoadPin(OpenCellid._map.getCenter(), title, cell, false);
+        OpenCellid._map.SetZoomLevel(10);
+         
+    } 
+//]]>
+</script>
+</div>
+

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OpencellidModelStoreContainer" CdmEntityContainer="OpencellidEntities">
+    <EntitySetMapping Name="Opencells">
+      <EntityTypeMapping TypeName="OpencellidModel.Opencell">
+        <MappingFragment StoreEntitySet="Opencell">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="radio" ColumnName="radio" />
+          <ScalarProperty Name="mcc" ColumnName="mcc" />
+          <ScalarProperty Name="net" ColumnName="net" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="range" ColumnName="range" />
+          <ScalarProperty Name="samples" ColumnName="samples" />
+          <ScalarProperty Name="changeable" ColumnName="changeable" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+          <ScalarProperty Name="averageSignal" ColumnName="averageSignal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

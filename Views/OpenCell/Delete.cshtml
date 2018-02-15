@@ -1,0 +1,117 @@
+﻿@model OpenCell.Models.Opencell
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Opencell</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.radio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.radio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.mcc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mcc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.net)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.net)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.area)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.area)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cell)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cell)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lon)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lon)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.range)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.range)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.samples)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.samples)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.changeable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.changeable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.created)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.created)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.updated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.updated)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.averageSignal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.averageSignal)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

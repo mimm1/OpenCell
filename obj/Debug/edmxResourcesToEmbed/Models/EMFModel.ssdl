@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OpencellidModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="OpencellidModelStoreContainer">
+    <EntitySet Name="Opencell" EntityType="OpencellidModel.Store.Opencell" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Opencell">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="radio" Type="varchar" MaxLength="50" />
+    <Property Name="mcc" Type="varchar" MaxLength="50" />
+    <Property Name="net" Type="varchar" MaxLength="50" />
+    <Property Name="area" Type="varchar" MaxLength="50" />
+    <Property Name="cell" Type="varchar" MaxLength="50" />
+    <Property Name="unit" Type="varchar" MaxLength="50" />
+    <Property Name="lon" Type="float" />
+    <Property Name="lat" Type="float" />
+    <Property Name="range" Type="varchar" MaxLength="50" />
+    <Property Name="samples" Type="varchar" MaxLength="50" />
+    <Property Name="changeable" Type="varchar" MaxLength="50" />
+    <Property Name="created" Type="varchar" MaxLength="50" />
+    <Property Name="updated" Type="varchar" MaxLength="50" />
+    <Property Name="averageSignal" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>
