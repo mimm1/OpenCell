@@ -82,3 +82,4 @@ C:\Users\Dell\documents\visual studio 2012\Projects\OpenCell\OpenCell\bin\zh-Han
 C:\Users\Dell\documents\visual studio 2012\Projects\OpenCell\OpenCell\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Dell\documents\visual studio 2012\Projects\OpenCell\OpenCell\obj\Debug\OpenCell.dll
 C:\Users\Dell\documents\visual studio 2012\Projects\OpenCell\OpenCell\obj\Debug\OpenCell.pdb
+C:\Users\Dell\documents\visual studio 2012\Projects\OpenCell\OpenCell\obj\Debug\OpenCell.csprojResolveAssemblyReference.cache

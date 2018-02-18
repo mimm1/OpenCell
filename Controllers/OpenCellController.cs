@@ -19,7 +19,7 @@ namespace OpenCell.Controllers
         public ActionResult Index()
         {
 
-            return View(db.Opencells.Where(x=>x.ID<=10).ToList());
+            return View(db.Opencells.Where(x => x.ID > 80230).ToList());
         }
 
         //
